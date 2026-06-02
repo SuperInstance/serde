@@ -60,3 +60,8 @@ alloc = ["serde_core/alloc"]
 # does not preserve identity and may result in multiple copies of the same data.
 # Be sure that this is what you want before enabling this feature.
 rc = ["serde_core/rc"]
+
+# Conservation-aware serialization — track overhead, enforce budgets, spot waste.
+# Provides SerializationBudget, BudgetGuard, FieldCounter, SerializationProfile,
+# and conservation reports that tell you which fields are eating your bytes.
+guardian = ["std"]

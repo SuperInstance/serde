@@ -265,6 +265,18 @@ crate_root!();
 
 mod integer128;
 
+/// Conservation-aware serialization — track overhead, enforce budgets, spot waste.
+///
+/// Enable with `features = ["guardian"]`.
+///
+/// ```ignore
+/// use serde::guardian::{SerializationBudget, BudgetGuard, SerializationProfile};
+/// ```
+#[cfg(feature = "guardian")]
+#[cfg_attr(docsrs, doc(cfg(feature = "guardian")))]
+pub mod guardian;
+
+
 // Re-export #[derive(Serialize, Deserialize)].
 //
 // The reason re-exporting is not enabled by default is that disabling it would
